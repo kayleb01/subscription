@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\subscriptionRequest;
 use App\Services\SubscriptionService;
 
 class SubscriptionController extends Controller
@@ -22,7 +23,7 @@ class SubscriptionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(subscriptionRequest $request)
     {
         return response()->json(['message' => 'User subscribed successfull', 'data' => $this->subscriptionService->subscribeUser($request)]);
     }

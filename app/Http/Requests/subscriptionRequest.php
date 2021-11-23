@@ -25,7 +25,7 @@ class subscriptionRequest extends FormRequest
     {
         return [
            'email' => 'required|email|unique:users,email',
-           'domain_id' => 'required|exists:domain,id'
+           'domain_id' => 'required|exists:domains,id'
         ];
     }
 }

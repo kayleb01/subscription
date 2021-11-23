@@ -20,7 +20,7 @@ class EmailSubscribersListener implements ShouldQueue
     public function handle($event)
     {
         tap($event->subject(), function ($subject) {
-            User::where(['subscribed' => '1', 'domain_id' => $subject->domain_id])
+            User::where(['subscribed' => '1'])
                 ->get()->each->notify(new MailSubcribers($subject));
         });
     }
