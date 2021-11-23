@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->smallInteger('subscribed');
+            $table->smallInteger('subscribed')->default(1);
             $table->integer('domain_id');
             $table->timestamps();
         });
