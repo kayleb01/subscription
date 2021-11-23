@@ -34,7 +34,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        return response()->json(['message' => "Post created successfully"], $this->postService->createPost($request));
+        return response()->json(['message' => "Post created successfully", 'data' => $this->postService->createPost($request)]);
     }
 
     /**
